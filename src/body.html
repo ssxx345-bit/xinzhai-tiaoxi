@@ -506,8 +506,8 @@ readColors(); renderThemeBtn();
 try { matchMedia('(prefers-color-scheme: dark)').addEventListener('change', onThemeChange); } catch (e) {}
 new MutationObserver(onThemeChange).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
 
-/* ---------- greeting ---------- */
-(() => {
+/* ---------- greeting: follows the viewer's local time, rechecked every minute ---------- */
+function updateGreet() {
   const h = new Date().getHours();
   const s = h < 5 ? '這麼晚還醒著。先讓自己慢下來。'
     : h < 11 ? '早安。今天慢慢來就好。'
@@ -515,8 +515,11 @@ new MutationObserver(onThemeChange).observe(root, { attributes: true, attributeF
     : h < 18 ? '下午好。停下來喘口氣。'
     : h < 23 ? '晚上好。今天辛苦了。'
     : '夜深了。今天就到這裡吧。';
-  $('#greet').textContent = s;
-})();
+  const el = $('#greet'); if (el.textContent !== s) el.textContent = s;
+}
+updateGreet();
+setInterval(updateGreet, 60000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) updateGreet(); });
 
 /* ---------- tabs ---------- */
 const TABS = ['breathe', 'sound', 'focus', 'letgo', 'ground'];
