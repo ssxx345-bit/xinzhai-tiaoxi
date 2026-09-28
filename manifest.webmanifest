@@ -1,0 +1,26 @@
+{
+  "name": "心齋調息",
+  "short_name": "心齋調息",
+  "description": "呼吸引導、即時合成的自然聲景、專注計時、放下煩惱與五感著陸練習。",
+  "lang": "zh-Hant",
+  "dir": "ltr",
+  "id": "./",
+  "start_url": "./心齋調息.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0C1517",
+  "theme_color": "#0C1517",
+  "categories": ["health", "lifestyle", "productivity"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "呼吸", "url": "./心齋調息.html#breathe" },
+    { "name": "聲景", "url": "./心齋調息.html#sound" },
+    { "name": "專注", "url": "./心齋調息.html#focus" }
+  ]
+}

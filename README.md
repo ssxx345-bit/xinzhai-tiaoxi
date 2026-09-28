@@ -1,6 +1,10 @@
 # 心齋調息
 
-隨時打開的喘息角落。單一 HTML 檔，不需要安裝或建置，用瀏覽器直接開 `心齋調息.html` 就能用。
+隨時打開的喘息角落。
+
+**線上使用：** https://ssxx345-bit.github.io/xinzhai-tiaoxi/
+
+手機打開後可以「加入主畫面」，像 App 一樣全螢幕使用，第一次開過之後離線也能用。
 
 ## 功能
 
@@ -17,3 +21,10 @@
 ## 參考
 
 溪流的合成方式參考 SuperCollider 官方範例 [babbling brook](https://github.com/supercollider/supercollider/blob/develop/examples/demonstrations/babbling%20brook.scd)（James McCartney）。
+
+## 檔案
+
+- `src/body.html`：頁面本體（也是 Claude artifact 版本的內容）
+- `build.py`：把本體包成完整網頁 `心齋調息.html`，加上 SEO、PWA 設定；改完本體後執行 `python build.py`
+- `manifest.webmanifest`、`sw.js`：可安裝與離線用
+- `icons/`：App 圖示，`make_icons.py` 可重新產生
